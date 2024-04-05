@@ -63,7 +63,9 @@ export const Footer = () => {
         </>
       }
       <a href="tel:88002222222" className={styles.phone}>8 800 222 22 22</a>
-      <Social/>
+      <div className={styles.icons}>
+        <Social />
+      </div>
     </footer>
   )
 }
