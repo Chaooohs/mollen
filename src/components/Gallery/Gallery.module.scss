@@ -1,0 +1,139 @@
+@import '../../variables.scss';
+
+.gallery {
+  display: flex;
+  align-items: flex-end;
+  height: 45.42cqi;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 50px 0;
+  height: 100%;
+
+  &__buttons {
+    width: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px 0;
+  }
+
+  &__btn {
+    width: 50px;
+    cursor: pointer;
+
+    & rect {
+      transition: $transition;
+    }
+
+    &:hover rect {
+      stroke: $color-text;
+    }
+  }
+}
+
+.previos {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &__img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    cursor: pointer;
+
+  }
+
+  & div {
+    padding: 6px;
+  }
+}
+
+.image {
+  height: 100%;
+  margin: 0 40px;
+
+  &__img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .gallery {
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  .navigation {
+    order: 2;
+    overflow-x: auto;
+    width: 46vw;
+  }
+
+  .previos {
+    flex-direction: row;
+    margin: 16px 0 0 16px;
+  }
+
+  .previos__img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .image {
+    order: 1;
+    width: 100%;
+    margin: 0;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .gallery {
+    flex-direction: row;
+    padding: 0 16px;
+  }
+
+  .navigation {
+    order: 2;
+    overflow-x: inherit;
+    width: 92px;
+  }
+
+  .previos {
+    flex-direction: column;
+    margin: 0 0 0 16px;
+  }
+
+  .image {
+    width: auto;
+  }
+}
+
+@media (max-width: 512px) {
+
+  .gallery {
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .navigation {
+    width: 100vw;
+    overflow-x: auto;
+  }
+
+  .image {
+    width: 100%;
+  }
+
+  .previos {
+    flex-direction: row;
+    margin: 16px 0 0 16px;
+  }
+}

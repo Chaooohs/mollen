@@ -1,0 +1,47 @@
+@import '../../variables.scss';
+
+.error {
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  row-gap: 56px;
+  background: url('/public/images/back/error.jpeg') center / cover no-repeat;
+}
+
+.status,
+.data {
+  color: $color-text-button;
+  font-weight: 400;
+  letter-spacing: $letter-spacing;
+  text-transform: uppercase;
+}
+
+.status {
+  font-size: 200px;
+  line-height: 100px;
+}
+
+.data {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.link {
+  width: 298px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 60px;
+  color: $color-text-button;
+  background-color: $color-primary;
+
+  &:hover {
+    background-color: $hover;
+  }
+}

@@ -1,0 +1,153 @@
+@import '../../variables.scss';
+
+.layout {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(348px, 1fr));
+  grid-auto-rows: max-content;
+  margin-bottom: 142px;
+}
+
+.card {
+  container-type: inline-size;
+  position: relative;
+  border-top: 1px solid $color-divider;
+  border-right: 1px solid $color-divider;
+  border-bottom: 1px solid $color-divider;
+  background-color: $bg;
+  transition: all .1s ease-out;
+  margin: 0 0 -1px 0;
+  z-index: 20;
+
+  &:hover {
+    // box-shadow: 0px 4px 24px 0px rgba(46, 67, 108, 0.15);
+    box-shadow: 0px 5px 10px 0px rgba(46, 67, 108, 0.15);
+    z-index: 99;
+  }
+}
+
+
+.percents {
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  width: 40px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $circe;
+  font-size: 12px;
+  color: $color-text-button;
+  background-color: #d34546;
+}
+
+.image {
+  height: 66.1cqi;
+
+  & img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.descr {
+  position: relative;
+  display: grid;
+  grid-template-rows: 4.5fr 1fr 1fr;
+  color: $color-text;
+  box-sizing: border-box;
+  padding: 0 40px 40px;
+  background-color: $bg;
+}
+
+.title {
+  text-align: center;
+  margin: 23px 0 0 0;
+}
+
+.name {
+  display: block;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.brand {
+  display: block;
+  letter-spacing: 2px;
+}
+
+.price {
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.through {
+  align-self: flex-end;
+  font-family: $circe;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: line-through;
+  color: $color-text-secondary;
+}
+
+.discount {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: $letter-spacing;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0 0 0 0;
+}
+
+.elem {
+  width: 100%;
+  position: absolute;
+  background-color: $bg;
+}
+
+.button {
+  display: block;
+  width: 227px;
+  height: 60px;
+  border-radius: 60px;
+  background: $color-primary;
+  color: $color-text-button;
+  margin: 0 auto 32px;
+
+  &:hover {
+    background-color: $hover;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .layout {
+    margin-bottom: 42px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .layout {
+    grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+  }
+
+  .descr {
+    grid-template-rows: 3fr 1fr 1fr;
+    padding: 20px 16px;
+  }
+
+  .discount {
+    font-size: 16px;
+  }
+
+  .through {
+    font-size: 12px;
+    line-height: 20px;
+  }
+
+  .title {
+    margin: 0;
+  }
+}

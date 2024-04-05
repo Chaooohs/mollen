@@ -1,0 +1,43 @@
+@import '../../variables.scss';
+
+.breadcrumbs {
+  margin-bottom: 16px;
+
+  color: $color-text-secondary;
+  font-family: $circe;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 14px;
+  letter-spacing: $letter-spacing;
+  text-transform: capitalize;
+  text-align: left;
+}
+
+.ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  & span {
+    margin-right: 8px;
+  }
+}
+
+.link {
+  color: $color-text;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .breadcrumbs {
+    margin-bottom: 18px;
+  }
+}

@@ -1,0 +1,82 @@
+@import '../../variables.scss';
+
+.aside {
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid $color-divider;
+  box-sizing: border-box;
+  padding: 40px;
+
+  color: $color-text-secondary;
+  font-family: $circe;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
+}
+
+.totalprice {
+  font-family: "Orchidea Pro", sans-serif;
+  color: $color-primary;
+  margin: 16px 0 28px 0;
+}
+
+.hr {
+  width: 100%;
+  border: 0;
+  height: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.price {
+  display: flex;
+  margin-top: 32px;
+}
+
+.discount {
+  display: flex;
+  margin-top: 20px;
+}
+
+.num {
+  // font-weight: bold;
+  color: $color-text;
+  margin-left: auto;
+}
+
+.button {
+  width: 281px;
+  height: 60px;
+  border-radius: 60px;
+  background: $color-primary;
+  color: $color-text-button;
+  margin-top: 32px;
+  transition: $transition;
+
+  &:hover {
+    background-color: $hover;
+  }
+}
+
+@media (max-width: 1024px) {
+
+  .aside {
+    border-top: 1px solid $color-divider;
+    padding-bottom: 100px;
+  }
+
+  .button {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    border-radius: 0;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .aside {
+    padding: 36px 16px 100px;
+  }
+}

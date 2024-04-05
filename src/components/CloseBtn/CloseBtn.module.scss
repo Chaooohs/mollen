@@ -1,0 +1,16 @@
+@import '../../variables.scss';
+
+.icon {
+  width: 24px;
+  height: 24px;
+  margin-left: auto;
+  cursor: pointer;
+
+  & path {
+    transition: $transition;
+  }
+
+  &:hover path {
+    fill: $color-icon;
+  }
+}

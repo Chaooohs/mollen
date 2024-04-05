@@ -1,0 +1,151 @@
+@import '../../variables.scss';
+
+.main {
+  container-type: inline-size;
+  position: relative;
+  // z-index: 2;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  margin-top: 72px;
+}
+
+.box {
+  // position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 72px;
+  display: flex;
+  column-gap: 20px;
+  align-items: center;
+  background-color: $bg;
+  border-bottom: 1px solid $color-divider;
+  box-sizing: border-box;
+  padding: 0 40px;
+  // margin-left: 40px;
+}
+
+.image {
+  width: 21px;
+  height: 20px;
+}
+
+.search {
+  width: 100%;
+}
+
+.icon {
+  width: 21px;
+  height: 20px;
+}
+
+.input {
+  width: 100%;
+  height: 62px;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  color: $color-text-secondary;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: $letter-spacing;
+  text-transform: uppercase;
+}
+
+.clear {
+  & img {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.header {
+  box-sizing: border-box;
+  padding: 40px 40px 60px;
+}
+
+.request {
+  margin: 20px 0 0 0;
+  font-weight: 700;
+  font-family: $circe;
+}
+
+.layout {
+  flex: 1 1 auto;
+  box-sizing: border-box;
+  padding: 0 0 0 40px;
+  margin-bottom: 100px;
+}
+
+.card {
+  width: 100%;
+  height: 202px;
+  display: flex;
+  border-top: 1px solid $color-divider;
+  box-sizing: border-box;
+  padding: 8px 40px 40px 0;
+}
+
+.image {
+  width: 282px;
+  height: 100%;
+  margin-right: 76px;
+
+  & img {
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.title {
+  width: 50%;
+  color: $color-text;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: $letter-spacing;
+  text-transform: uppercase;
+  margin: 47px 0 0 0;
+}
+
+@media (max-width: 768px) {
+
+  .main {
+    margin-top: 64px;
+  }
+
+  .box {
+    height: 65px;
+    padding: 0 16px;
+  }
+
+  .layout {
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .card {
+    height: 124px;
+    padding: 24px 16px;
+  }
+
+  .image {
+    width: 70px;
+    height: 52px;
+    margin-right: 20px;
+  }
+
+  .title {
+    width: 100%;
+    font-size: 18px;
+    line-height: 22px;
+    letter-spacing: 0;
+    text-transform: none;
+    color: $color-text-secondary;
+    margin: 4px 0 0 0;
+  }
+}

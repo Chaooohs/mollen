@@ -1,0 +1,127 @@
+@import "../../variables.scss";
+
+.header {
+  height: 72px;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto 3fr auto;
+  column-gap: 40px;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 40px;
+  z-index: 1;
+}
+
+.burger {
+  width: 24px;
+}
+
+.logo {
+  width: 103px;
+}
+
+.link {
+  transition: $transition;
+}
+
+.link:hover {
+  color: #84adff;
+}
+
+.white {
+  color: $color-text-button;
+}
+
+.gray {
+  color: $color-text;
+}
+
+.color-text-secondary {
+  color: $color-text-secondary;
+}
+
+.dots {
+  transition: $transition;
+}
+
+.dots:hover {
+  fill: $color-icon-secondary;
+}
+
+.search {
+  display: flex;
+  column-gap: 12px;
+  justify-self: flex-end;
+  width: fit-content;
+}
+
+.search:hover .link {
+  color: $color-icon-secondary;
+  // color: #84adff;
+}
+
+.bin {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background-color: $color-primary;
+  transition: $transition;
+}
+
+.bin:hover {
+  background-color: $hover;
+}
+
+.icon {
+  width: 21px;
+
+  & path {
+    // transition: all 0.2s linear;
+  }
+}
+
+.bin:hover .icon path {
+  // fill: $color-icon;
+}
+
+.count {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50px;
+  background-color: #d34546;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: $circe;
+  font-size: 12px;
+  color: $color-text-button;
+}
+
+@media (max-width: 768px) {
+
+  .header {
+    height: 64px;
+    column-gap: 20px;
+    padding: 0 16px;
+  }
+
+  .burger {
+    transform: rotate(90deg);
+  }
+
+  .bin {
+    width: 32px;
+    height: 32px;
+  }
+}
