@@ -19,7 +19,7 @@ export const CatalogPage = () => {
   const firstRequest = useRef(false);
   const [skip, setSkip] = useState(true);
 
-  let { category, subcategory, page, color, size, sortby } = useSelector((state) => state.filters);
+  let { category, subcategory, page, color, size, sortby, order } = useSelector((state) => state.filters);
   const { data: products, error } = useGetDataQuery(
     {
       category,
@@ -27,8 +27,8 @@ export const CatalogPage = () => {
       page,
       color,
       size,
-      sortby: sortby?.property,
-      order: sortby?.order,
+      sortby,
+      order,
     },
     {
       skip: skip, // запрос по условию. если параметр skip: true, запрос не происходит.
@@ -53,11 +53,11 @@ export const CatalogPage = () => {
       page,
       color,
       size,
-      sortby: sortby?.property,
-      order: sortby?.order,
+      sortby,
+      order,
     });
     navigate(`?${queryString}`);
-  }, [category, subcategory, page, color, size, sortby]);
+  }, [category, subcategory, page, color, size, sortby, order]);
 
   useEffect(() => {
     window.scrollTo(0, 0);

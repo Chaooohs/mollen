@@ -32,7 +32,7 @@ export const FilterBySize = () => {
           {size}
         </div>
 
-        <CSSTransition in={isOpen} timeout={200} classNames="selector" unmountOnExit>
+        <CSSTransition in={isOpen} timeout={200} classNames="selector" >
           <ul className={styles.list}>
             <li
               data-type="default"

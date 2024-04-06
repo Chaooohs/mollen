@@ -1,20 +1,28 @@
-import { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 
-import { setSort } from '../../redux'
+import { setOrder, setSortBy, } from '../../redux'
 import { sort } from '../../utils'
 import styles from './SortBy.module.scss'
 
 
 export const SortBy = () => {
   const dispatch = useDispatch()
+  const sortby = useSelector(state => state.filters.sortby)
   const [isOpen, setIsOpen] = useState(false)
   const [isName, setIsName] = useState("за замовчуванням")
 
-const handleClick = (el) => { 
-  dispatch(setSort(el))
-  setIsName(el.name)
-}
+  useEffect(() => {
+    sort.forEach(el => {
+      if(el.property === sortby) setIsName(el.name)
+    })
+  }, [sortby])
+
+  const handleClick = (el) => {
+    dispatch(setSortBy(el.property))
+    dispatch(setOrder(el.order))
+    setIsName(el.name)
+  }
 
   return (
     <div className={styles.box} onMouseLeave={() => setIsOpen(false)}>

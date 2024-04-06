@@ -9,10 +9,10 @@ export const subcathome = ["lounge", "bathroom", "bedroom", "kitchen"]
 
 export const colors = ["blue", "yellow", "green", "red", "gray", "black", "orange", "coral", "violet", "white"]
 
-export const sizevar = [" ", "S", "M", "L", "XL", "XXL", "28", "30", "32", "40", "44", "46", "170",]
+export const sizevar = ["S", "M", "L", "XL", "XXL", "3XL"]
 
 export const sort = [
-  { name: "за замовчуванням", property: "" },
+  { name: "за замовчуванням", property: null },
   { name: "за популярністю", property: "rating", order: "desc" },
   { name: "від дешевих до дорогих", property: "price", order: "asc" },
   { name: "від дорогих до дешевих", property: "price", order: "desc" },

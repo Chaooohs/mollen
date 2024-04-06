@@ -7,7 +7,8 @@ const initialState = {
   color: "",
   search: "",
   size: "",
-  sortby: {},
+  sortby: "",
+  order: "",
 };
 
 export const filtersSlice = createSlice({
@@ -32,8 +33,11 @@ export const filtersSlice = createSlice({
     setSize: (state, action) => {
       state.size = action.payload;
     },
-    setSort: (state, action) => {
+    setSortBy: (state, action) => {
       state.sortby = action.payload;
+    },
+    setOrder: (state, action) => {
+      state.order = action.payload;
     },
     setFilters: (state, action) => {
       state.category = action.payload.category;
@@ -43,9 +47,10 @@ export const filtersSlice = createSlice({
       state.search = action.payload.search;
       state.size = action.payload.size;
       state.sortby = action.payload.sortby;
+      state.order = action.payload.order;
     },
   },
 });
 
-export const { setCategory, setSubCategory, setPage, setColor, setSearch, setFilters, setSize, setSort } = filtersSlice.actions;
+export const { setCategory, setSubCategory, setPage, setColor, setSearch, setFilters, setSize, setSortBy, setOrder } = filtersSlice.actions;
 export default filtersSlice.reducer;
