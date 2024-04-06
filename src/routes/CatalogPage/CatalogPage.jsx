@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import qs from "qs";
 
 import filters from '/public/images/svg/filters.svg'
-import { Aside, Breadcrumbs, Cards, LastSeen, SubCategoriesBtn, PaginationNav } from "../../components";
+import { Aside, Breadcrumbs, Cards, LastSeen, SubCategoriesBtn, PaginationNav, SortBy } from "../../components";
 import { setFilters, setSidebarOpen } from "../../redux";
 import { categoryUkr } from "../../utils";
 import styles from "./CatalogPage.module.scss";
@@ -19,9 +19,17 @@ export const CatalogPage = () => {
   const firstRequest = useRef(false);
   const [skip, setSkip] = useState(true);
 
-  let { category, subcategory, page, color, } = useSelector((state) => state.filters);
+  let { category, subcategory, page, color, size, sortby } = useSelector((state) => state.filters);
   const { data: products, error } = useGetDataQuery(
-    { category, subcategory, page, color },
+    {
+      category,
+      subcategory,
+      page,
+      color,
+      size,
+      sortby: sortby?.property,
+      order: sortby?.order,
+    },
     {
       skip: skip, // запрос по условию. если параметр skip: true, запрос не происходит.
     }
@@ -44,9 +52,12 @@ export const CatalogPage = () => {
       subcategory,
       page,
       color,
+      size,
+      sortby: sortby?.property,
+      order: sortby?.order,
     });
     navigate(`?${queryString}`);
-  }, [category, subcategory, page, color]);
+  }, [category, subcategory, page, color, size, sortby]);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -88,6 +99,7 @@ export const CatalogPage = () => {
         }
 
         <SubCategoriesBtn category={category} />
+        <SortBy/>
 
         <div style={{ flex: "1" }}>
           {!error ? (

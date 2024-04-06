@@ -2,7 +2,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 
 import { setCategory, setSidebarOpen, setSubCategory } from "../../redux";
-import { SortColors } from "../SortColors/SortColors";
+import { FilterByColor } from "../FilterByColor/FilterByColor";
+import { FilterBySize } from "../FilterBySize/FilterBySize";
 import { CloseBtn } from "../CloseBtn/CloseBtn";
 import { categories, categoryUkr } from "../../utils";
 import styles from "./Aside.module.scss";
@@ -53,7 +54,8 @@ export const Aside = () => {
           );
         })}
       </div>
-      <SortColors />
+      <FilterByColor />
+      <FilterBySize/>
       {
         isLaptop &&
         <button

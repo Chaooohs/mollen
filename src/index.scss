@@ -119,6 +119,12 @@ input:-webkit-autofill:focus {
   margin: 0;
 }
 
+.fs-10 {
+  font-size: 10px;
+  letter-spacing: 2px;
+  text-transform: lowercase;
+}
+
 /* #endregion */
 
 /* #region button */
@@ -278,6 +284,37 @@ input:-webkit-autofill:focus {
   &-exit-done {
     opacity: 0;
     max-height: 0;
+    overflow: hidden;
+  }
+}
+
+.selector {
+  &-enter {
+    opacity: 0;
+    // max-height: 0;
+    // max-height: 200px;
+    overflow: hidden;
+  }
+
+  &-enter-done {
+    opacity: 1;
+    // max-height: 200px;
+    transition: opacity 200ms, max-height 200ms;
+    overflow: auto;
+  }
+
+  &-exit {
+    opacity: 0;
+    // max-height: 0;
+    // max-height: 200px;
+    overflow: hidden;
+    transition: opacity 200ms, max-height 200ms;
+  }
+
+  &-exit-done {
+    // max-height: 200px;
+    opacity: 0;
+    // max-height: 0;
     overflow: hidden;
   }
 }

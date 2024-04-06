@@ -1,0 +1,50 @@
+@import '../../variables.scss';
+
+.box {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: center;
+  width: fit-content;
+  height: 80px;
+  box-sizing: border-box;
+  padding-left: 40px;
+
+  color: $color-text;
+  font-family: $circe;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.value {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  margin-left: 4px;
+}
+
+.list {
+  position: absolute;
+  z-index: 1200;
+  top: 50%;
+  list-style-type: none;
+  background-color: $bg;
+  padding: 0;
+}
+
+.item {
+  box-sizing: border-box;
+  padding: 10px;
+  &:hover {
+    background-color: $color-divider;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .box {
+    height: 65px;
+  }
+}

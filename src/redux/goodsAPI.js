@@ -5,7 +5,7 @@ export const goodsAPI = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: 'https://65f0c8d3da8c6584131c698d.mockapi.io/mollen/' }),
   endpoints: (build) => ({
     getData: build.query({
-      query: ({ category, subcategory, page, color }) => ({
+      query: ({ category, subcategory, page, color, size, sortby, order }) => ({
         url: `catalog?`,
         params: {
           category: category,
@@ -13,6 +13,9 @@ export const goodsAPI = createApi({
           page: page ? page : page = '1',
           limit: 9,
           color: color,
+          size: size,
+          sortby: sortby,
+          order: order,
         }
       }),
     }),

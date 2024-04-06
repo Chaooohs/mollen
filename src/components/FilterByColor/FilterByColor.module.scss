@@ -2,7 +2,8 @@
 
 .box {
   box-sizing: border-box;
-  padding: 74px 40px 0 ;
+  padding: 0 40px;
+  margin-top: 74px;
 }
 
 .checkbox {
@@ -40,8 +41,8 @@
 @media (max-width: 992px) {
 
   .box {
-    border-top: 1px solid $color-divider;
-    padding: 32px 16px;
+    padding: 0 16px;
+    margin-top: 32px;
   }
 
   .checkbox {

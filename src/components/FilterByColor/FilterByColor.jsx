@@ -2,9 +2,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setColor, setPage } from '../../redux';
 
 import { colors } from '../../utils';
-import styles from './SortColors.module.scss'
+import styles from './FilterByColor.module.scss'
 
-export const SortColors = () => {
+export const FilterByColor = () => {
   const { color } = useSelector((state) => state.filters);
   const dispatch = useDispatch()
 
