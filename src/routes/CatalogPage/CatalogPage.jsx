@@ -20,6 +20,7 @@ export const CatalogPage = () => {
   const [skip, setSkip] = useState(true);
 
   let { category, subcategory, page, color, size, sortby, order } = useSelector((state) => state.filters);
+
   const { data: products, error } = useGetDataQuery(
     {
       category,
@@ -47,16 +48,19 @@ export const CatalogPage = () => {
 
   // запись в адресную строку.
   useEffect(() => {
+
     const queryString = qs.stringify({
       category,
-      subcategory,
+      subcategory: subcategory === "" ? null : subcategory,
       page,
-      color,
-      size,
-      sortby,
+      color: color === "" ? null : color,
+      size: size === "" ? null : size,
+      sortby: sortby === "" ? null : sortby,
       order,
-    });
+    }, { skipNulls: true });
+
     navigate(`?${queryString}`);
+
   }, [category, subcategory, page, color, size, sortby, order]);
 
   useEffect(() => {
@@ -99,7 +103,7 @@ export const CatalogPage = () => {
         }
 
         <SubCategoriesBtn category={category} />
-        <SortBy/>
+        <SortBy />
 
         <div style={{ flex: "1" }}>
           {!error ? (
