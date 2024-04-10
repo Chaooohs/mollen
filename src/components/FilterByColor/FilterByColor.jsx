@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { setColor, setPage } from '../../redux';
 
@@ -5,14 +6,18 @@ import { colors } from '../../utils';
 import styles from './FilterByColor.module.scss'
 
 export const FilterByColor = () => {
-  const { color } = useSelector((state) => state.filters);
+  const { color, category } = useSelector((state) => state.filters);
   const dispatch = useDispatch()
 
+  useEffect(() => {
+    dispatch(setColor(""))
+  }, [category])
+
   const handleChecked = (e) => {
-    const colorValue = e.target.value
-    const colorChecked = e.target.checked
-    if (colorChecked) {
-      dispatch(setColor(colorValue))
+    const value = e.target.value
+    const checked = e.target.checked
+    if (checked) {
+      dispatch(setColor(value))
     } else {
       dispatch(setColor(""))
     }
@@ -22,35 +27,27 @@ export const FilterByColor = () => {
   return (
     <div className={styles.box}>
       <span className='txt-md'>кольори</span>
-      <div className={styles.checkbox}>
+      <form className={styles.form}>
         {colors.map((el, index) => {
           return (
-            <div key={index}>
+            <div key={index} className={styles.checkbox}>
               <input
                 type="checkbox"
                 name="color"
                 value={el}
                 id={`color${index}`}
-                className={styles.input}
                 onChange={handleChecked}
                 checked={el === color}
               />
               <label
                 htmlFor={`color${index}`}
-                className={styles.label}
-                style={!el
-                  ? { border: '1px solid #4E76C6' }
-                  :
-                  {
-                    backgroundColor: `${el === "white" ? '#ECEAE7' : el}`, 
-                    border: `${el === "white" ? '#ECEAE7' : el}`
-                  }}
               >
+                <span style={{ backgroundColor: `${el === "white" ? '#ECEAE7' : el}` }}></span>
               </label>
             </div>
           );
         })}
-      </div>
+      </form>
     </div>
   )
 }

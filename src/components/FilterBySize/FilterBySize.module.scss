@@ -3,49 +3,36 @@
 .box {
   box-sizing: border-box;
   padding: 0 40px;
-  margin-top: 74px;
+  margin-top: 40px;
 }
 
-.selector {
-  width: 184px;
+.selector {}
+
+.form {
+  max-width: 278px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
   margin-top: 16px;
 }
 
-.input {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  height: 42px;
-  outline: none;
-  border: 1px solid $color-divider;
-  background-color: transparent;
-  box-sizing: border-box;
-  padding: 0 10px;
+.checkbox {
 
-  font-size: 14px;
-  font-family: $circe;
-  // color: $color-text-secondary;
+  &>input {
+    display: none;
 
-}
+    &:checked+span {
+      border: 1px solid $color-text;
+    }
+  }
 
-.list {
-  list-style-type: none;
-  border: 1px solid $color-divider;
-  box-sizing: border-box;
-  padding: 16px 0;
-  margin: -1px 0 0;
-}
+  &>span {
+    transition: all 0.2s linear;
+    cursor: pointer;
 
-.item {
-  font-family: $circe;
-  color: $color-text-secondary;
-  box-sizing: border-box;
-  padding: 10px 16px;
-  cursor: pointer;
-
-  &:hover {
-    color: $color-text-button;
-    background-color: $hover;
+    &:hover {
+      border: 1px solid $color-text;
+    }
   }
 }
 
@@ -56,7 +43,7 @@
     margin-top: 32px;
   }
 
-  .selector {
+  .form {
     margin-top: 20px;
   }
 }

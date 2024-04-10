@@ -3,39 +3,50 @@
 .box {
   box-sizing: border-box;
   padding: 0 40px;
-  margin-top: 74px;
+  margin-top: 40px;
+}
+
+.form {
+  max-width: 214px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 16px;
+}
+
+.border {
+  border: 1px solid black;
 }
 
 .checkbox {
-  max-width: 228px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 38px;
-}
+  & input {
+    display: none;
 
-.input {
-  display: none;
-}
+    &:checked+label {
+      border: 1px solid $color-text;
+    }
+  }
 
-.label {
-  position: relative;
-  display: block;
-  width: 30px;
-  height: 35px;
-  border-radius: 6px;
-  opacity: 1;
-  cursor: pointer;
-}
+  & label {
+    display: block;
+    box-sizing: border-box;
+    padding: 4px;
+    border: 1px solid $bg;
+    border-radius: 6px;
+    transition: all 0.2s linear;
 
-.input:checked+.label::before {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 0;
-  width: 32px;
-  height: 32px;
-  background: url('/public//images/icon/check.png') 0 0 / 100% no-repeat;
+    &:hover {
+      border: 1px solid $color-text;
+    }
+  }
+
+  & span {
+    display: block;
+    width: 22px;
+    height: 26px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
 }
 
 @media (max-width: 992px) {
@@ -45,7 +56,14 @@
     margin-top: 32px;
   }
 
-  .checkbox {
+  .form {
     margin-top: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .box {
+    margin-bottom: 32px;
   }
 }

@@ -10,11 +10,9 @@ export const Accordion = ({ title, content }) => {
       <div className="accordion__item">
         <div className="txt_md accordion__title" onClick={() => setIsActive(!isActive)}>
           <div className='accordion__title_text'>{title}</div>
-          <CSSTransition classNames={"accordion-icon"} in={isActive} timeout={250}>
-            <div className="accordion__icon">
-              <img src={plus} alt='plus' />
-            </div>
-          </CSSTransition>
+          <div className="accordion__icon" style={isActive ? { transform: 'rotate(45deg)' } : null}>
+            <img src={plus} alt='plus' />
+          </div>
         </div>
 
         <CSSTransition

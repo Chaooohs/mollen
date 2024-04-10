@@ -1,0 +1,77 @@
+@import '../../variables.scss';
+
+.box {
+  position: relative;
+  max-width: 586px;
+  width: 100%;
+
+  box-sizing: border-box;
+  padding: 20px 0;
+
+  color: $color-text-secondary;
+  font-family: $circe;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 14px;
+}
+
+.border {
+  border-bottom: 1px solid $color-divider;
+  cursor: pointer;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+}
+
+.value {
+  color: $color-text;
+  margin-left: 70px;
+}
+
+.icon {
+  width: 8px;
+  margin-left: auto;
+  transition: all 0.2s linear;
+}
+
+.popup {
+  background-color: $bg;
+  margin-top: 18px;
+}
+
+.list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.item {
+  box-sizing: border-box;
+  padding: 10px;
+
+  &:hover {
+    background-color: $color-divider;
+  }
+}
+
+@media (max-width: 992px) {
+
+  .box {
+    margin-bottom: 36px;
+    padding: 14px 0;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .box {
+    font-size: 14px;
+  }
+
+  .label {
+    box-sizing: border-box;
+    padding: 0 16px;
+  }
+}

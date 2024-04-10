@@ -54,8 +54,8 @@ export const Aside = () => {
           );
         })}
       </div>
+      <FilterBySize />
       <FilterByColor />
-      <FilterBySize/>
       {
         isLaptop &&
         <button

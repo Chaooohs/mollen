@@ -41,3 +41,10 @@
     border-bottom: 1px solid $color-divider;
   }
 }
+
+@media (max-width: 400px) {
+
+  .box {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}

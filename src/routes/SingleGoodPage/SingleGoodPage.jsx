@@ -3,18 +3,20 @@ import { useLocation, useParams } from "react-router-dom";
 import { useGetSingleProductQuery } from "../../redux/goodsAPI";
 import { useDispatch, useSelector } from "react-redux";
 
-import { Breadcrumbs, Gallery, LastSeen, StarRating } from "../../components";
-import { setCartItems, setLastSeen, setLimitGoodsModalOpen, } from "../../redux";
+import { Breadcrumbs, Gallery, LastSeen, Select, StarRating } from "../../components";
+import { setCartItems, setErrorModal, setLastSeen, setLimitGoodsModalOpen, } from "../../redux";
 import { getDiscount, categoryUkr } from "../../utils";
 import styles from "./SingleGoodPage.module.scss";
 
 export const SingleGoodPage = () => {
-  const {state} = useLocation();
+  const { state } = useLocation();
   const countRef = useRef()
   const plusRef = useRef()
+  const cartBtnRef = useRef()
   const params = useParams();
   const dispatch = useDispatch()
   const cartItem = useSelector(state => state.cart.items);
+  const size = useSelector(state => state.sizeSinglePage.size)
 
   const { data: singleGood } = useGetSingleProductQuery(`/catalog/${params.id}`);
 
@@ -65,7 +67,8 @@ export const SingleGoodPage = () => {
     }
   }
 
-  const handleClickAddToCart = (id, thumbnail, title, price, discountPercentage, stock) => {
+  const handleClickAddToCart = (id, thumbnail, title, price, discountPercentage, stock, size) => {
+
     const cartItem = {
       id,
       thumbnail,
@@ -74,8 +77,15 @@ export const SingleGoodPage = () => {
       discountPrice: getDiscount(price, discountPercentage),
       count,
       stock,
+      size,
     };
-    dispatch(setCartItems(cartItem))
+
+    if (size === "") {
+      dispatch(setErrorModal(true))
+      cartBtnRef.current.blur()
+    } else {
+      dispatch(setCartItems(cartItem))
+    }
   };
 
   return (
@@ -89,7 +99,7 @@ export const SingleGoodPage = () => {
         {singleGood && (
           <>
             <header className={styles.header}>
-              <Breadcrumbs subfolder={categoryUkr(state?.subfolder)} current={singleGood.title}/>
+              <Breadcrumbs subfolder={categoryUkr(state?.subfolder)} current={singleGood.title} />
               <h1 className={styles.heading}>{singleGood.title}</h1>
             </header>
             <div className={`txt-md ${styles.brand}`}>
@@ -149,11 +159,15 @@ export const SingleGoodPage = () => {
                 </button>
               </div>
               <button
+                ref={cartBtnRef}
                 className={styles.button}
-                onClick={() => handleClickAddToCart(singleGood.id, singleGood.thumbnail, singleGood.title, singleGood.price, singleGood.discountPercentage, singleGood.stock)}
+                onClick={() => handleClickAddToCart(singleGood.id, singleGood.thumbnail, singleGood.title, singleGood.price, singleGood.discountPercentage, singleGood.stock, size)}
                 disabled={disabled}>
                 <span className="txt-md">у кошик</span>
               </button>
+            </div>
+            <div className={styles.size}>
+              <Select data={singleGood.size} />
             </div>
           </>
         )}

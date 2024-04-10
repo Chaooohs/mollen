@@ -1,17 +1,8 @@
 @import '../../variables.scss';
 
-.layout {
-  container-type: inline-size;
-  flex: 1 1 auto;
-  display: flex;
-  box-sizing: border-box;
-  padding-top: 72px;
-}
-
 .main {
   display: flex;
   flex-direction: column;
-  width: 80%;
 }
 
 .header {
@@ -43,9 +34,5 @@
 
   .header {
     padding: 20px 16px 28px;
-  }
-
-  .main {
-    width: 100%;
   }
 }

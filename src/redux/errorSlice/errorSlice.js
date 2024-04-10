@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   status: {},
   data: {},
+  errorModal: false,
 };
 
 export const errorSlice = createSlice({
@@ -13,9 +14,12 @@ export const errorSlice = createSlice({
       state.status = action.payload.status;
       state.data = action.payload.data;
     },
+    setErrorModal: (state, action) => {
+      state.errorModal = action.payload;
+    },
   },
 });
 
-export const { setError } = errorSlice.actions;
+export const { setError, setErrorModal } = errorSlice.actions;
 
 export default errorSlice.reducer;

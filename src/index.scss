@@ -110,6 +110,11 @@ input:-webkit-autofill:focus {
   margin-bottom: 142px;
 }
 
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
 .grid-2col {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -123,6 +128,25 @@ input:-webkit-autofill:focus {
   font-size: 10px;
   letter-spacing: 2px;
   text-transform: lowercase;
+}
+
+.size-cell {
+  color: $color-text;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: $letter-spacing;
+  text-transform: uppercase;
+
+  width: fit-content;
+  min-width: 67px;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid $color-divider;
+  box-sizing: border-box;
+  padding: 0 10px;
 }
 
 /* #endregion */
@@ -177,7 +201,7 @@ input:-webkit-autofill:focus {
 
   &__icon {
     margin-left: 40px;
-    transition: all 0.3s linear;
+    transition: all 0.25s linear;
 
     & img {
       width: 12px;
@@ -323,6 +347,10 @@ input:-webkit-autofill:focus {
 
 @media (max-width: 992px) {
 
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
   .grid-2col {
     grid-template-columns: 1fr;
   }
@@ -344,6 +372,16 @@ input:-webkit-autofill:focus {
   }
 
   .txt_md {
+    font-size: 12px;
+  }
+
+  .cards-lt {
+    grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+  }
+
+  .size-cell {
+    min-width: 56px;
+    height: 22px;
     font-size: 12px;
   }
 

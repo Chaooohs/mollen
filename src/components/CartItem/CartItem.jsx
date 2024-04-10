@@ -56,7 +56,10 @@ export const CartItem = () => {
                 <img src={el.thumbnail} alt={el.title} />
               </Link>
             </div>
-            <h3 className={styles.title}>{el.title}</h3>
+            <div className={styles.box}>
+              <h3 className={styles.title}>{el.title}</h3>
+              <div className="size-cell">{el.size.replace('-', '*')}</div>
+            </div>
             <div className={styles.counter}>
               <button className={styles.minus} onClick={() => dispatch(setDecrement(el.id))}>
                 -

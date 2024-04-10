@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useMediaQuery } from "react-responsive";
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -13,7 +13,10 @@ export const SubCategoriesBtn = ({ category }) => {
   const { subcategory } = useSelector(state => state.filters);
   const subquentity = useSelector(state => state.subQuentity.subTabsQuentity);
   const dispatch = useDispatch()
+  const [isPerView, setIsPerView] = useState(1)
+  const isDecktop = useMediaQuery({ minWidth: 993 })
   const isLaptop = useMediaQuery({ maxWidth: 992 })
+  const isMobile = useMediaQuery({ maxWidth: 600 })
 
   let subcategories = [];
   switch (category) {
@@ -37,6 +40,12 @@ export const SubCategoriesBtn = ({ category }) => {
     dispatch(setSubTabsQuentiry(subcategories.length))
   }, [category])
 
+  useEffect(() => {
+    isLaptop && setIsPerView(2.5)
+    isMobile && setIsPerView(1.5)
+    isDecktop && setIsPerView(subquentity)
+  }, [isLaptop, isMobile, subquentity])
+
   const handleChecked = (e) => {
     const subValue = e.target.value;
     const subChecked = e.target.checked
@@ -51,7 +60,7 @@ export const SubCategoriesBtn = ({ category }) => {
   return (
     <div className={styles.box}>
       <Swiper
-        slidesPerView={isLaptop ? 2.5 : subquentity}
+        slidesPerView={isPerView}
         modules={[Mousewheel]}
         mousewheel={true}
         style={{ width: '100%' }}

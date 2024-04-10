@@ -57,7 +57,7 @@ export const CatalogPage = () => {
       size: size === "" ? null : size,
       sortby: sortby === "" ? null : sortby,
       order,
-    }, { skipNulls: true });
+    }, { skipNulls: true });  // skipNulls полностью пропускает рендеринг ключей со null значениями
 
     navigate(`?${queryString}`);
 
@@ -78,7 +78,7 @@ export const CatalogPage = () => {
   }
 
   return (
-    <div className={styles.layout}>
+    <div className="main grid">
 
       {
         !isLaptop &&
@@ -134,7 +134,7 @@ export const CatalogPage = () => {
           )}
         </div>
 
-        <LastSeen category={category} />
+        {/* <LastSeen category={category} /> */}
       </main>
     </div>
   );

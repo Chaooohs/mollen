@@ -3,13 +3,15 @@ import { useMediaQuery } from 'react-responsive'
 import { useSelector } from "react-redux";
 import { Transition } from "react-transition-group";
 
-import { Aside, BurgerMenu, ClearCart, Footer, Header, LimitGoodsModal, RemoveCartItem } from "../components";
+import { Aside, BurgerMenu, ClearCart, ErrorModal, Footer, Header, LimitGoodsModal, RemoveCartItem } from "../components";
 
 export const Root = () => {
   const location = useLocation()
   const isLaptop = useMediaQuery({ maxWidth: 1025 })
   const { cartModalOpen, cartItemModalOpen, limitGoodsModal } = useSelector(state => state.modal)
   const { sidebar, burger } = useSelector(state => state.open)
+  const error = useSelector(state => state.error.errorModal)
+
   return (
     <div className="page">
       <Header />
@@ -40,6 +42,11 @@ export const Root = () => {
           <BurgerMenu state={state}/>
         )}
       </Transition>
+
+      {
+        error &&
+        <ErrorModal text={'Необхідно обрати розмір'} />
+      }
     </div>
   );
 };

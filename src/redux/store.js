@@ -7,6 +7,7 @@ import errorReduser from './errorSlice/errorSlice'
 import subTabsQuentityReducer from "./subTabsQuentity/subTabsQuentity";
 import openSliceReducer from "./openSlice/openSlice";
 import lastSeenReducer from "./lastSeenSlice/lastSeenSlice"
+import sizeSinglePageReducer from './sizeSinglePageSlice/sizeSinglePageSlice'
 
 export const store = configureStore({
   reducer: {
@@ -17,6 +18,7 @@ export const store = configureStore({
     subQuentity: subTabsQuentityReducer,
     open: openSliceReducer,
     lastSeen: lastSeenReducer,
+    sizeSinglePage: sizeSinglePageReducer,
     error: errorReduser,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat([goodsAPI.middleware]),
