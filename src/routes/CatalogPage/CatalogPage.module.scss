@@ -1,8 +1,7 @@
 @import '../../variables.scss';
 
 .main {
-  display: flex;
-  flex-direction: column;
+  display: grid;
 }
 
 .header {

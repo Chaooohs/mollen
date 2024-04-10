@@ -12,6 +12,7 @@ export const Aside = () => {
   const { category } = useSelector((state) => state.filters);
   const dispatch = useDispatch()
   const isLaptop = useMediaQuery({ maxWidth: 992 })
+  
   const handleChecked = (e) => {
     const value = e.target.value;
     dispatch(setCategory(value))
@@ -42,12 +43,12 @@ export const Aside = () => {
                 type="radio"
                 name="category"
                 value={el}
-                id={`rad ${index}`}
+                id={`rad${index}`}
                 className={styles.input}
                 onChange={handleChecked}
                 checked={el === category}
               />
-              <label htmlFor={`rad ${index}`} className={styles.label}>
+              <label htmlFor={`rad${index}`} className={styles.label}>
                 {categoryUkr(el)}
               </label>
             </div>

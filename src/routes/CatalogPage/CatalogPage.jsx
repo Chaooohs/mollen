@@ -134,7 +134,7 @@ export const CatalogPage = () => {
           )}
         </div>
 
-        {/* <LastSeen category={category} /> */}
+        <LastSeen category={category} />
       </main>
     </div>
   );

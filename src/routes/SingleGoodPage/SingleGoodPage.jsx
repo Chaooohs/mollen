@@ -143,7 +143,7 @@ export const SingleGoodPage = () => {
             </div>
             <div className={styles.box} style={!disabled ? { backgroundColor: '#4E76C6' } : { backgroundColor: '#ECEAE7' }}>
               <div className={styles.counter} >
-                <button className={styles.minus} onClick={decrement} disabled={disabled}>
+                <button className={styles.minus} onClick={decrement} disabled={disabled} >
                   -
                 </button>
 
@@ -152,6 +152,7 @@ export const SingleGoodPage = () => {
                   className={styles.number}
                   value={count}
                   onChange={handleChange}
+                  disabled={disabled}
                 />
 
                 <button ref={plusRef} className={styles.plus} onClick={increment} disabled={disabled}>
