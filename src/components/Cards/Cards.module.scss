@@ -91,12 +91,7 @@
 }
 
 .discount {
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 28px;
-  letter-spacing: $letter-spacing;
   text-align: center;
-  text-transform: uppercase;
   margin: 0 0 0 0;
 }
 
@@ -136,10 +131,6 @@
   .descr {
     grid-template-rows: 3fr 1fr 1fr;
     padding: 20px 16px;
-  }
-
-  .discount {
-    font-size: 16px;
   }
 
   .through {

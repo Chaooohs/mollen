@@ -44,7 +44,7 @@ export const Cards = ({ el }) => {
             <div className={styles.price}>
               <span className={styles.through}>{el.price.toLocaleString('ru')}</span>
               <span
-                className={styles.discount}
+                className={`txt-lg ${styles.discount}`}
                 // style={{ color: '#d34546' }}
                 style={{ color: '#4E76C6' }}
               >
@@ -52,7 +52,7 @@ export const Cards = ({ el }) => {
               </span>
             </div>
             :
-            <div className={styles.discount}>{`${el.price} ₴`}</div>
+            <div className={`txt-lg ${styles.discount}`}>{`${el.price} ₴`}</div>
         }
       </div>
       {
