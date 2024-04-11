@@ -2,6 +2,7 @@
 
 .main {
   display: grid;
+  grid-template-rows: 0fr 0fr 0fr 2fr;
 }
 
 .header {
@@ -30,6 +31,10 @@
 
 
 @media (max-width: 992px) {
+
+  .main {
+    grid-template-rows: 0fr 0fr 0fr 0fr 2fr;
+  }
 
   .header {
     padding: 20px 16px 28px;
