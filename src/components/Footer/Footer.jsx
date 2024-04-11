@@ -24,7 +24,7 @@ export const Footer = () => {
   }
 
   return (
-    <footer className={styles.footer}>
+    <footer className={`txt-circe-md ${styles.footer}`}>
       <div className={styles.logo} onClick={handleClickToHome}>
         <Logo
           width={'103px'}
@@ -34,7 +34,7 @@ export const Footer = () => {
       </div>
       <div className={styles.copy}>
         <span>2021 © Mollen.</span>
-        <span style={{ lineHeight: '18px' }}>Все права защищены</span>
+        <span>Все права защищены</span>
       </div>
       {
         !isLaptop &&

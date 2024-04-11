@@ -48,7 +48,7 @@ export const Aside = () => {
                 onChange={handleChecked}
                 checked={el === category}
               />
-              <label htmlFor={`rad${index}`} className={styles.label}>
+              <label htmlFor={`rad${index}`} className={`txt-circe-md ${styles.label}`}>
                 {categoryUkr(el)}
               </label>
             </div>

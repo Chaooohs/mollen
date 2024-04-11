@@ -11,7 +11,7 @@ export const Breadcrumbs = ({ subfolder, current }) => {
   }
 
   return (
-    <div className={styles.breadcrumbs}>
+    <div className={`txt-circe-sm ${styles.breadcrumbs}`}>
       <ul className={styles.ul}>
         <li>
           <Link to="/" className={styles.link}>

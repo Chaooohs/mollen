@@ -1,13 +1,5 @@
 @import '../../variables.scss';
 
-.content {
-  color: $color-text;
-  font-family: $circe;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 24px;
-}
-
 .header {
   box-sizing: border-box;
   padding: 40px 40px 30px;
@@ -38,10 +30,6 @@
 
 .title {
   color: $color-text-secondary;
-  font-family: $circe;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 24px;
   text-transform: capitalize;
 }
 
@@ -110,16 +98,11 @@
 
 @media (max-width: 768px) {
 
-  .content {
-    font-size: 16px;
-  }
-
   .header {
     padding: 20px 16px 30px;
   }
 
   .about {
-    font-size: 14px;
     margin-top: 24px;
   }
 
@@ -130,7 +113,6 @@
   }
 
   .time {
-    font-size: 14px;
     margin-top: 12px;
   }
 

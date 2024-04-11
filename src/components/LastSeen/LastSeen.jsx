@@ -45,7 +45,7 @@ export const LastSeen = ({ category }) => {
                           <div className={styles.img}>
                             <img src={el.thumbnail} />
                           </div>
-                          <p className={styles.title}>{el.title}</p>
+                          <p className={`txt-circe-md ${styles.title}`}>{el.title}</p>
                         </div>
                       </Link>
                     </SwiperSlide>

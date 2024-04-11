@@ -89,7 +89,7 @@ export const CatalogPage = () => {
 
         <header className={styles.header}>
           <Breadcrumbs current={categoryUkr(category)} />
-          <h1 className="txt-lg mg-0">{categoryUkr(category)}</h1>
+          <h1 className="txt-xl mg-0">{categoryUkr(category)}</h1>
         </header>
 
         {
@@ -128,7 +128,7 @@ export const CatalogPage = () => {
               <PaginationNav />
             </>
           ) : (
-            <h1 className="txt-lg" style={{ marginLeft: "52px" }}>
+            <h1 className="txt-xl" style={{ marginLeft: "52px" }}>
               товар не знайдено
             </h1>
           )}

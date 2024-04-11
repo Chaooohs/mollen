@@ -28,7 +28,7 @@ export const HomePage = () => {
                 <Link
                   key={index}
                   to={`/catalog?category=${el}`}
-                  className={styles.link}
+                  className={`txt-lg ${styles.link}`}
                   onClick={() => handlerClick(el)}
                 >
                   <Circle className={styles.circle} />
@@ -41,7 +41,7 @@ export const HomePage = () => {
         <img src={Flover} className={styles.flover} />
       </div>
       <div className={styles.popular}>
-        <h1 className={`txt-lg ${styles.title}`}>популярнi товари</h1>
+        <h1 className={`txt-xl ${styles.title}`}>популярнi товари</h1>
         <div className="cards-lt">
           {
             popular?.map((el) => {

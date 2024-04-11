@@ -60,7 +60,7 @@ export const CartItem = () => {
               <h3 className={styles.title}>{el.title}</h3>
               <div className="size-cell">{el.size.replace('-', '*')}</div>
             </div>
-            <div className={styles.counter}>
+            <div className={`txt-circe-sm ${styles.counter}`}>
               <button className={styles.minus} onClick={() => dispatch(setDecrement(el.id))}>
                 -
               </button>
@@ -86,7 +86,7 @@ export const CartItem = () => {
 
             {
               el.discountPrice !== el.price &&
-              <span className={styles.price}>
+              <span className={`txt-circe-sm ${styles.price}`}>
                 {`${(el.price * el.count).toLocaleString("ru")}`}
               </span>
             }

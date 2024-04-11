@@ -45,13 +45,8 @@
 }
 
 .counter,
-.price,
-.sum {
+.price {
   color: $color-text-secondary;
-  font-family: $circe;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 16px;
 }
 
 .counter {
@@ -125,14 +120,6 @@
   margin-right: 5px;
 }
 
-// .sum {
-//   grid-row: 2;
-//   grid-column: 5/6;
-//   justify-self: flex-end;
-//   align-self: flex-end;
-//   margin-right: 10%;
-// }
-
 .icon {
   grid-row: 1;
   grid-column: 5/6;
@@ -151,10 +138,6 @@
 .icon:hover {
   fill: $color-icon;
 }
-
-// .icon:hover>rect {
-//   fill: $color-primary;
-// }
 
 @media (max-width: 1024px) {
 

@@ -25,7 +25,7 @@ export const SortBy = () => {
   }
 
   return (
-    <div className={styles.box} onMouseLeave={() => setIsOpen(false)}>
+    <div className={`txt-circe-sm ${styles.box}`} onMouseLeave={() => setIsOpen(false)}>
       <div onMouseEnter={() => setIsOpen(true)}>
         <span >Сортувати</span>
         <span className={styles.value}>{isName}</span>

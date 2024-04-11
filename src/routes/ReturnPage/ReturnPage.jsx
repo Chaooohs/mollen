@@ -6,7 +6,7 @@ export const ReturnPage = () => {
     <main className="main">
       <header className="accordion__header" >
       <Breadcrumbs current={"повернення"}/>
-        <h1 className="txt-lg mg-0" >повернення та обмін</h1>
+        <h1 className="txt-xl mg-0" >повернення та обмін</h1>
       </header>
       <div className='accordion'>
         {

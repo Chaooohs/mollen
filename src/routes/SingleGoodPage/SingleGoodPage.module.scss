@@ -53,10 +53,6 @@
 .id,
 .stock {
   color: $color-text-secondary;
-  font-family: $circe;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 24px;
   text-transform: uppercase;
   margin: 12px 0;
 }
@@ -64,13 +60,6 @@
 .description {
   grid-column: 2;
   grid-row: 4;
-
-  color: $color-text;
-  font-family: $circe;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 24px;
-  letter-spacing: 1px;
   margin: 26px 0;
 }
 
@@ -282,7 +271,6 @@
   .id {
     grid-column: 1;
     grid-row: 4;
-    font-size: 14px;
   }
 
   .rating {
@@ -295,13 +283,11 @@
   .stock {
     grid-column: 1;
     grid-row: 7;
-    font-size: 16px;
   }
 
   .description {
     grid-column: 1;
     grid-row: 8;
-    font-size: 16px;
   }
 
   .size {

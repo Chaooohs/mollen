@@ -104,12 +104,12 @@ export const SearchPage = () => {
       </div>
       <header className={styles.header}>
         <Breadcrumbs current={"пошук"} />
-        <h1 className="txt-lg mg-0">Результати пошуку</h1>
-        <p className={`txt-md ${styles.request}`}>
+        <h1 className="txt-xl mg-0">Результати пошуку</h1>
+        <p className={`txt-circe-md ${styles.request}`}>
           за запитом
-          <span className={styles.request}> {search} </span>
+          <b className={styles.request}> {search} </b>
           знайдено
-          <span className={styles.request}> {goods?.length} </span>
+          <b className={styles.request}> {goods?.length} </b>
           товарiв
         </p>
       </header>
@@ -121,7 +121,7 @@ export const SearchPage = () => {
                 <div className={styles.image}>
                   <img src={el.preview[0]} />
                 </div>
-                <h2 className={styles.title}>{el.title}</h2>
+                <h2 className={`txt-lg ${styles.title}`}>{el.title}</h2>
               </div>
             </Link>
           );

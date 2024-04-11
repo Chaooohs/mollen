@@ -6,7 +6,7 @@ export const GuaranteePage = () => {
     <main className="main">
       <header className="accordion__header" >
       <Breadcrumbs current={"гарантії"}/>
-        <h1 className="txt-lg mg-0" >гарантії</h1>
+        <h1 className="txt-xl mg-0" >гарантії</h1>
       </header>
       <div className='accordion'>
         {

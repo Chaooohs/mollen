@@ -22,10 +22,10 @@ export const CartPage = () => {
         <header className={styles.header}>
           <Breadcrumbs current={"кошик"} />
           <div className={styles.chapter}>
-            <h1 className="txt-lg mg-0">кошик</h1>
+            <h1 className="txt-xl mg-0">кошик</h1>
             {
               cartItems.length > 0 &&
-              <div className={styles.clear} onClick={handleClearCartItems} >
+              <div className={`txt-circe-sm ${styles.clear}`} onClick={handleClearCartItems} >
                 <div style={{ display: 'flex', columnGap: '6px' }}>
                   <span>очистити</span>
                   {

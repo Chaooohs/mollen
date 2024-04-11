@@ -13,10 +13,10 @@ export const CartSidebar = () => {
 
 
   return (
-    <aside className={styles.aside}>
+    <aside className={`txt-circe-sm ${styles.aside}`}>
       <div>
         <div>Разом</div>
-        <div className={`txt-lg ${styles.totalprice}`}>
+        <div className={`txt-xl ${styles.totalprice}`}>
           {`${toralPriceWithDiscount.toLocaleString("ru")} ₴`}
         </div>
       </div>

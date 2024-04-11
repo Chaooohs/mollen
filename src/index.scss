@@ -87,22 +87,6 @@ input:-webkit-autofill:focus {
   margin-top: 72px;
 }
 
-.txt-lg {
-  font-size: 40px;
-  font-weight: 400;
-  line-height: 52px;
-  letter-spacing: $letter-spacing;
-  text-transform: uppercase;
-}
-
-.txt-md {
-  font-size: 14px;
-  font-weight: 400;
-  line-height: 22px;
-  letter-spacing: $letter-spacing;
-  text-transform: uppercase;
-}
-
 .cards-lt {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(348px, 1fr));
@@ -147,6 +131,48 @@ input:-webkit-autofill:focus {
   border: 1px solid $color-divider;
   box-sizing: border-box;
   padding: 0 10px;
+}
+
+/* #endregion */
+
+/* #region text */
+
+.txt-xl {
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 52px;
+  letter-spacing: $letter-spacing;
+  text-transform: uppercase;
+}
+
+.txt-lg {
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 28px;
+  letter-spacing: $letter-spacing;
+  text-transform: uppercase;
+}
+
+.txt-md {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: $letter-spacing;
+  text-transform: uppercase;
+}
+
+.txt-circe-md {
+  font-family: $circe;
+  font-size: 18px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.txt-circe-sm {
+  font-family: $circe;
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 24px;
 }
 
 /* #endregion */
@@ -366,17 +392,27 @@ input:-webkit-autofill:focus {
     padding: 20px 16px 24px;
   }
 
-  .txt_lg {
+  .cards-lt {
+    grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+  }
+
+  .txt-xl {
     font-size: 28px;
     line-height: 36px;
+  }
+
+  .txt-lg {
+    font-size: 16px;
+    font-weight: 400;
   }
 
   .txt_md {
     font-size: 12px;
   }
 
-  .cards-lt {
-    grid-template-columns: repeat(auto-fill, minmax(258px, 1fr));
+  .txt-circe-md {
+    font-size: 14px;
+    line-height: 22px;
   }
 
   .size-cell {

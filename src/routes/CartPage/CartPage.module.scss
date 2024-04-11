@@ -31,10 +31,6 @@
 
 .clear span {
   color: $color-text-secondary;
-  font-family: $circe;
-  font-size: 14px;
-  font-weight: 300;
-  line-height: 16px;
 }
 
 .icon {
@@ -55,10 +51,6 @@
 .clear:hover .icon {
   fill: $color-icon;
 }
-
-// .clear:hover .icon>rect {
-//   fill: $color-text;
-// }
 
 @media (max-width: 1024px) {
 

@@ -48,11 +48,6 @@
 
 .title {
   color: $color-text-secondary;
-  font-family: $circe;
-  font-size: 18px;
-  font-weight: 300;
-  line-height: 24px;
-  // text-align: center;
   margin: 0;
 }
 
@@ -64,9 +59,5 @@
 
   .card {
     padding: 0 16px;
-  }
-
-  .title {
-    font-size: 14px;
   }
 }

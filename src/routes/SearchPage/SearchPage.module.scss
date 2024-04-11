@@ -70,8 +70,10 @@
 
 .request {
   margin: 20px 0 0 0;
-  font-weight: 700;
-  font-family: $circe;
+
+  & b {
+    font-weight: bold;
+  }
 }
 
 .layout {
@@ -104,11 +106,6 @@
 .title {
   width: 50%;
   color: $color-text;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 28px;
-  letter-spacing: $letter-spacing;
-  text-transform: uppercase;
   margin: 47px 0 0 0;
 }
 
@@ -141,10 +138,8 @@
 
   .title {
     width: 100%;
-    font-size: 18px;
-    line-height: 22px;
-    letter-spacing: 0;
-    text-transform: none;
+    letter-spacing: 0 !important;
+    text-transform: none !important;
     color: $color-text-secondary;
     margin: 4px 0 0 0;
   }

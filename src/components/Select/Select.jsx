@@ -27,7 +27,7 @@ export const Select = ({ data }) => {
   return (
     <div
       onClick={() => setIsOpen(!isOpen)}
-      className={`${styles.box} ${Array.isArray(data) && isLength ? styles.border : ""}`}
+      className={`txt-circe-md ${styles.box} ${Array.isArray(data) && isLength ? styles.border : ""}`}
     >
       <div className={styles.label}>
         <div >{Array.isArray(data) && isLength ? "Оберiть ромiр" : "Розмiр"}</div>

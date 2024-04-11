@@ -107,12 +107,12 @@ export const SingleGoodPage = () => {
                 {singleGood.brand}
               </div>
             </div>
-            <div className={styles.id}>
+            <div className={`txt-circe-md ${styles.id}`}>
               <div className={styles.wrap}>
                 {`id: ${singleGood.id}`}
               </div>
             </div>
-            <div className={styles.description}>
+            <div className={`txt-circe-md ${styles.description}`}>
               <div className={styles.wrap}>
                 {singleGood.description}
               </div>
@@ -122,13 +122,13 @@ export const SingleGoodPage = () => {
                 <StarRating singleGood={singleGood} />
               </div>
             </div>
-            <div className={styles.stock}>
+            <div className={`txt-circe-md ${styles.stock}`}>
               <div className={styles.wrap}>
                 <span className={styles.stocktext}>в наявностi</span>
                 <span className={styles.stocknum}>{singleGood.stock > 10 ? "(10+)" : singleGood.stock}</span>
               </div>
             </div>
-            <div className={` txt-lg ${styles.price}`}>
+            <div className={`txt-xl ${styles.price}`}>
               <div className={styles.wrap}>
                 <div className={styles.price__box}>
                   <span>
