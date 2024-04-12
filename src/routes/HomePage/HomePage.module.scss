@@ -61,17 +61,15 @@
   }
 
   &:hover circle:first-of-type {
-    opacity: 1;
-      fill: $color-primary;
+    fill: $color-primary;
   }
-  
+
 }
-  .circle circle:first-of-type {
-    width: 60px;
-    opacity: 0.2;
-    fill: $color-icon-secondary;
-    transition: $transition;
-  }
+
+.circle circle:first-of-type {
+  width: 60px;
+  transition: $transition;
+}
 
 .flover {
   width: 52px;
